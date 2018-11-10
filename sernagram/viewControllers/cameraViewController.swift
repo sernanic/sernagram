@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import ProgressHUD
-class cameraViewController: UIViewController {
+class cameraViewController: UIViewController,UITextFieldDelegate {
     var selectedImage:UIImage?
 
     @IBOutlet weak var cameraImage: UIImageView!
@@ -17,6 +17,8 @@ class cameraViewController: UIViewController {
     @IBOutlet weak var captionTextView: UITextView!
     
     @IBOutlet weak var shareOutlet: UIButton!
+    
+    @IBOutlet weak var removeOutlet: UIBarButtonItem!
     
     @IBAction func shareButton(_ sender: UIButton) {
         //we are going to push selecteImage to storage in firebase
@@ -42,17 +44,34 @@ class cameraViewController: UIViewController {
                 let newPostId = postRef.childByAutoId().key
                 let newPostReference = postRef.child(newPostId)
                 //remember that this setValue has a completionHandler, but you can use the setValue alone, completionHandler is a small function that is preformed
-                newPostReference.setValue(["photoURL":cameraImageURL], withCompletionBlock: { (error, DatabaseReference) in
+                newPostReference.setValue(["photoURL":cameraImageURL,"caption":self.captionTextView.text], withCompletionBlock: { (error, DatabaseReference) in
                     if error != nil{
                         ProgressHUD.showError(error?.localizedDescription)
                         return
                     }
                     ProgressHUD.showSuccess()
+                    //after we successfully put this in firebase we set the place holders to there initial form again
+                    self.captionTextView.text = ""
+                    //this specifies the photo in the assets is the photo we desire
+                    self.cameraImage.image = UIImage(named: "placeholder-photo")
+                    //we reset the selectedImage to nothing so handlePost's button color can become disabled and gray
+                    self.selectedImage = nil
+                    //this takes us to the homeViewcontroller once the action is done (there are 5 items and each item is indexed from 0 th 4 from left to right)
+                    self.tabBarController?.selectedIndex = 0
                 })
                
-            })
+            })//end of putData
         }
-}
+}//end of shareButton
+    @IBAction func removeAction(_ sender: UIBarButtonItem) {
+        self.captionTextView.text = ""
+        //this specifies the photo in the assets is the photo we desire
+        self.cameraImage.image = UIImage(named: "placeholder-photo")
+        //we reset the selectedImage to nothing so handlePost's button color can become disabled and gray
+        self.selectedImage = nil
+        handlePost()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +80,22 @@ class cameraViewController: UIViewController {
         cameraImage.addGestureRecognizer(tapGesture)
         cameraImage.isUserInteractionEnabled = true
 
-        // Do any additional setup after loading the view.
+    }//every time the view appears we take into consideration handlePost()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        handlePost()
+    }
+    //we don't allow post that do not have a picture
+    func handlePost(){
+        if selectedImage != nil {
+            self.shareOutlet.isEnabled = true
+            self.removeOutlet.isEnabled =  true
+            self.shareOutlet.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        } else{
+            self.shareOutlet.isEnabled = false
+            self.removeOutlet.isEnabled =  false
+            self.shareOutlet.backgroundColor = .lightGray
+        }
     }
     //This is how we start uploading images to firebase
     @objc func handleSelectPhoto(){
@@ -72,8 +106,23 @@ class cameraViewController: UIViewController {
         
     }
     
+    //touch outside the keyboard in order to end keyboard
+    //remember to use UITextFieldDelegate up top
+    //remember to connect text field to  delegate in little yellow button
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    //touch return in the keyboard in order to end keyboard
+    //remember to use UITextFieldDelegate up top
+    //remember to connect text field to  delegate in little yellow button
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 
 }
+//pickerController
 extension cameraViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         //dismiss picker control when desired

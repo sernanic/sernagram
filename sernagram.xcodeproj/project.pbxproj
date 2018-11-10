@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A92A20094F9E13DB0C49E98B /* Pods_sernagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFB27EBF170E76682DD6BF2 /* Pods_sernagram.framework */; };
+		B582F415219757080024352C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582F414219757080024352C /* Post.swift */; };
 		B5F7BD6F217E81B400D922E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7BD6E217E81B400D922E1 /* AppDelegate.swift */; };
 		B5F7BD71217E81B400D922E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7BD70217E81B400D922E1 /* ViewController.swift */; };
 		B5F7BD74217E81B400D922E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F7BD72217E81B400D922E1 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		74678A46C812C4444CD99E37 /* Pods-sernagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sernagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-sernagram/Pods-sernagram.release.xcconfig"; sourceTree = "<group>"; };
 		9F2509AD710AA2528444EAA6 /* Pods-sernagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sernagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sernagram/Pods-sernagram.debug.xcconfig"; sourceTree = "<group>"; };
 		AAFB27EBF170E76682DD6BF2 /* Pods_sernagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sernagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B582F414219757080024352C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B5F7BD6B217E81B400D922E1 /* sernagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sernagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F7BD6E217E81B400D922E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F7BD70217E81B400D922E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B582F413219756EE0024352C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B582F414219757080024352C /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B5F7BD62217E81B400D922E1 = {
 			isa = PBXGroup;
 			children = (
@@ -72,11 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				B5F7BD6E217E81B400D922E1 /* AppDelegate.swift */,
-				B5F7BD70217E81B400D922E1 /* ViewController.swift */,
-				B5F80B822194FC6700F69EFF /* cameraViewController.swift */,
-				B5F7BD82217E877400D922E1 /* signUpViewController.swift */,
-				B5F7BD84217E977800D922E1 /* homeViewController.swift */,
-				B5F80B7E2191356000F69EFF /* profileViewController.swift */,
+				B582F413219756EE0024352C /* Model */,
+				B5F80B85219528FF00F69EFF /* viewControllers */,
 				B5F7BD72217E81B400D922E1 /* Main.storyboard */,
 				B5F7BD75217E81B500D922E1 /* Assets.xcassets */,
 				B5F7BD77217E81B500D922E1 /* LaunchScreen.storyboard */,
@@ -84,6 +91,18 @@
 				B5F7BD7A217E81B500D922E1 /* Info.plist */,
 			);
 			path = sernagram;
+			sourceTree = "<group>";
+		};
+		B5F80B85219528FF00F69EFF /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5F7BD70217E81B400D922E1 /* ViewController.swift */,
+				B5F80B822194FC6700F69EFF /* cameraViewController.swift */,
+				B5F7BD82217E877400D922E1 /* signUpViewController.swift */,
+				B5F7BD84217E977800D922E1 /* homeViewController.swift */,
+				B5F80B7E2191356000F69EFF /* profileViewController.swift */,
+			);
+			path = viewControllers;
 			sourceTree = "<group>";
 		};
 		B773F1CC37654E4A6C910269 /* Frameworks */ = {
@@ -237,6 +256,7 @@
 				B5F7BD6F217E81B400D922E1 /* AppDelegate.swift in Sources */,
 				B5F7BD83217E877400D922E1 /* signUpViewController.swift in Sources */,
 				B5F80B7F2191356000F69EFF /* profileViewController.swift in Sources */,
+				B582F415219757080024352C /* Post.swift in Sources */,
 				B5F7BD85217E977800D922E1 /* homeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
