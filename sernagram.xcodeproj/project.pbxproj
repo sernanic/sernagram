@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		A92A20094F9E13DB0C49E98B /* Pods_sernagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFB27EBF170E76682DD6BF2 /* Pods_sernagram.framework */; };
 		B582F415219757080024352C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582F414219757080024352C /* Post.swift */; };
+		B5F516C52197DD9200DE5239 /* materialDesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F516C42197DD9200DE5239 /* materialDesignButton.swift */; };
+		B5F516C721991AB900DE5239 /* homeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F516C621991AB900DE5239 /* homeTableViewCell.swift */; };
+		B5F516CC2199234A00DE5239 /* cardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F516CB2199234A00DE5239 /* cardTableViewCell.swift */; };
 		B5F7BD6F217E81B400D922E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7BD6E217E81B400D922E1 /* AppDelegate.swift */; };
-		B5F7BD71217E81B400D922E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7BD70217E81B400D922E1 /* ViewController.swift */; };
+		B5F7BD71217E81B400D922E1 /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7BD70217E81B400D922E1 /* signInViewController.swift */; };
 		B5F7BD74217E81B400D922E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F7BD72217E81B400D922E1 /* Main.storyboard */; };
 		B5F7BD76217E81B500D922E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F7BD75217E81B500D922E1 /* Assets.xcassets */; };
 		B5F7BD79217E81B500D922E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F7BD77217E81B500D922E1 /* LaunchScreen.storyboard */; };
@@ -26,9 +29,12 @@
 		9F2509AD710AA2528444EAA6 /* Pods-sernagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sernagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sernagram/Pods-sernagram.debug.xcconfig"; sourceTree = "<group>"; };
 		AAFB27EBF170E76682DD6BF2 /* Pods_sernagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sernagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B582F414219757080024352C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		B5F516C42197DD9200DE5239 /* materialDesignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = materialDesignButton.swift; sourceTree = "<group>"; };
+		B5F516C621991AB900DE5239 /* homeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeTableViewCell.swift; sourceTree = "<group>"; };
+		B5F516CB2199234A00DE5239 /* cardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardTableViewCell.swift; sourceTree = "<group>"; };
 		B5F7BD6B217E81B400D922E1 /* sernagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sernagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F7BD6E217E81B400D922E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B5F7BD70217E81B400D922E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5F7BD70217E81B400D922E1 /* signInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
 		B5F7BD73217E81B400D922E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5F7BD75217E81B500D922E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5F7BD78217E81B500D922E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +66,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B5F516C32197DD5C00DE5239 /* designs */ = {
+			isa = PBXGroup;
+			children = (
+				B5F516C42197DD9200DE5239 /* materialDesignButton.swift */,
+				B5F516CB2199234A00DE5239 /* cardTableViewCell.swift */,
+			);
+			path = designs;
+			sourceTree = "<group>";
+		};
+		B5F516C821991B2200DE5239 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				B5F516C621991AB900DE5239 /* homeTableViewCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		B5F7BD62217E81B400D922E1 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				B5F7BD6E217E81B400D922E1 /* AppDelegate.swift */,
+				B5F516C821991B2200DE5239 /* views */,
+				B5F516C32197DD5C00DE5239 /* designs */,
 				B582F413219756EE0024352C /* Model */,
 				B5F80B85219528FF00F69EFF /* viewControllers */,
 				B5F7BD72217E81B400D922E1 /* Main.storyboard */,
@@ -96,7 +121,7 @@
 		B5F80B85219528FF00F69EFF /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B5F7BD70217E81B400D922E1 /* ViewController.swift */,
+				B5F7BD70217E81B400D922E1 /* signInViewController.swift */,
 				B5F80B822194FC6700F69EFF /* cameraViewController.swift */,
 				B5F7BD82217E877400D922E1 /* signUpViewController.swift */,
 				B5F7BD84217E977800D922E1 /* homeViewController.swift */,
@@ -226,6 +251,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -236,6 +262,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -251,11 +278,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5F7BD71217E81B400D922E1 /* ViewController.swift in Sources */,
+				B5F7BD71217E81B400D922E1 /* signInViewController.swift in Sources */,
+				B5F516C721991AB900DE5239 /* homeTableViewCell.swift in Sources */,
 				B5F80B832194FC6700F69EFF /* cameraViewController.swift in Sources */,
+				B5F516C52197DD9200DE5239 /* materialDesignButton.swift in Sources */,
 				B5F7BD6F217E81B400D922E1 /* AppDelegate.swift in Sources */,
 				B5F7BD83217E877400D922E1 /* signUpViewController.swift in Sources */,
 				B5F80B7F2191356000F69EFF /* profileViewController.swift in Sources */,
+				B5F516CC2199234A00DE5239 /* cardTableViewCell.swift in Sources */,
 				B582F415219757080024352C /* Post.swift in Sources */,
 				B5F7BD85217E977800D922E1 /* homeViewController.swift in Sources */,
 			);
